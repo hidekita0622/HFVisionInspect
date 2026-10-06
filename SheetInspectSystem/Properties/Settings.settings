@@ -1,0 +1,33 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="HFVisionInspect.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Camera0Tag" Type="System.String" Scope="User">
+      <Value Profile="(Default)">上面</Value>
+    </Setting>
+    <Setting Name="Camera1Tag" Type="System.String" Scope="User">
+      <Value Profile="(Default)">下面</Value>
+    </Setting>
+    <Setting Name="DIOBitPosInspect" Type="System.Int16" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="DIOBitPosWait" Type="System.Int16" Scope="User">
+      <Value Profile="(Default)">4</Value>
+    </Setting>
+    <Setting Name="DIOBitCutter" Type="System.Int16" Scope="User">
+      <Value Profile="(Default)">6</Value>
+    </Setting>
+    <Setting Name="MeanGrayCount" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="ResultLogBack" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\\DailyBackup</Value>
+    </Setting>
+    <Setting Name="FrontCameraCH" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="RearCameraCH" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

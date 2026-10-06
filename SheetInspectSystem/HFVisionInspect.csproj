@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B94C4E0B-F91F-44AD-84AB-B47063F809B4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HFVisionInspect</RootNamespace>
+    <AssemblyName>HFVisionInspect</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Inspection.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Avaldata.AcapLibDotNet, Version=1.14.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\..\AVALDATA\SDK-AcapLibPlus\DLL\x64\Avaldata.AcapLibDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="halcondotnetxl, Version=26.5.0.0, Culture=neutral, PublicKeyToken=4973bed59ddbf2b8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\..\Program Files\MVTec\HALCON-26.05-Progress\bin\dotnet35\halcondotnetxl.dll</HintPath>
+    </Reference>
+    <Reference Include="hdevenginedotnetxl">
+      <HintPath>..\..\..\..\..\..\..\..\..\..\Program Files\MVTec\HALCON-26.05-Progress\bin\dotnet35\hdevenginedotnetxl.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.5.0.1\lib\net46\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AcapChannel.cs" />
+    <Compile Include="AcapChannel.Serial.cs" />
+    <Compile Include="ClassEdgeSearch.cs" />
+    <Compile Include="ClassImageProc.cs" />
+    <Compile Include="ClassImageSave.cs" />
+    <Compile Include="ClassImageWindow.cs" />
+    <Compile Include="ClassInspectResult.cs" />
+    <Compile Include="ClassInspectControl.cs" />
+    <Compile Include="ClassInspectParam.cs" />
+    <Compile Include="ClassRectangle.cs" />
+    <Compile Include="ClassSystemParam.cs" />
+    <Compile Include="FormAutoExposure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAutoExposure.Designer.cs">
+      <DependentUpon>FormAutoExposure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGetArea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGetArea.Designer.cs">
+      <DependentUpon>FormGetArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInputBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInputBox.Designer.cs">
+      <DependentUpon>FormInputBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInspectHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInspectHistory.Designer.cs">
+      <DependentUpon>FormInspectHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInspectSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInspectSetting.Designer.cs">
+      <DependentUpon>FormInspectSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMessage.Designer.cs">
+      <DependentUpon>FormMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSetDotInspect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSetDotInspect.Designer.cs">
+      <DependentUpon>FormSetDotInspect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSetMorphology.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSetMorphology.Designer.cs">
+      <DependentUpon>FormSetMorphology.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSystemParam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSystemParam.Designer.cs">
+      <DependentUpon>FormSystemParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HImageConverter.cs" />
+    <Compile Include="HollowFiberRuleInspector.cs" />
+    <Compile Include="ImagePool.cs" />
+    <Compile Include="IniFileCtrl.cs" />
+    <Compile Include="JaiCameraControl.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserCameraViewFront.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCameraViewFront.Designer.cs">
+      <DependentUpon>UserCameraViewFront.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCameraViewRear.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCameraViewRear.Designer.cs">
+      <DependentUpon>UserCameraViewRear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserHistoryView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserHistoryView.Designer.cs">
+      <DependentUpon>UserHistoryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserSetDefectLevel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserSetDefectLevel.Designer.cs">
+      <DependentUpon>UserSetDefectLevel.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormAutoExposure.resx">
+      <DependentUpon>FormAutoExposure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGetArea.resx">
+      <DependentUpon>FormGetArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInputBox.resx">
+      <DependentUpon>FormInputBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInspectHistory.resx">
+      <DependentUpon>FormInspectHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInspectSetting.resx">
+      <DependentUpon>FormInspectSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMessage.resx">
+      <DependentUpon>FormMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSetDotInspect.resx">
+      <DependentUpon>FormSetDotInspect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSetMorphology.resx">
+      <DependentUpon>FormSetMorphology.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSystemParam.resx">
+      <DependentUpon>FormSystemParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UserCameraViewFront.resx">
+      <DependentUpon>UserCameraViewFront.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCameraViewRear.resx">
+      <DependentUpon>UserCameraViewRear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserHistoryView.resx">
+      <DependentUpon>UserHistoryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserSetDefectLevel.resx">
+      <DependentUpon>UserSetDefectLevel.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 および x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Inspection.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy $(TargetPath) \\DESKTOP-I7BIO5I\3Imaging\Soft\HFVisionInspect\Debug</PostBuildEvent>
+  </PropertyGroup>
+</Project>
